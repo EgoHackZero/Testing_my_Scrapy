@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test server</title>
+</head>
+<body>
+    <h1>test server</h1>
+    <ul>
+        {% for movie in data %}
+            <li>
+                <h2>{{ movie[0] }}</h2>
+                <p>{{ movie[1] }}</p>
+                <p>{{ movie[2] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

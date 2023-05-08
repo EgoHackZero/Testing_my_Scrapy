@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: wiki_elf
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 4568579
+
+  app:
+    build: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_HOST: 127.0.0.1
+      POSTGRES_PORT: 5432
+      POSTGRES_DBNAME: wiki_elf
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 4568579
